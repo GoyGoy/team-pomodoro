@@ -16,7 +16,7 @@ class Pomodoro(models.Model):
     date_start = models.DateTimeField(default=timezone.now)
     date_end = models.DateTimeField(blank=True, null=True)
     is_broken = models.BooleanField()
-    broke_cause = models.CharField()
+    broke_cause = models.TextField(blank=True, null=True)
     record_type = models.IntegerField(default=RECORD_TYPE_POMODORO,
                                       choices=RECORD_TYPES)
 
