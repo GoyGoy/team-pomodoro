@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.conf.urls import url
 from django.contrib.auth.models import User
+from django.http import Http404
 
 from tastypie import fields
 from tastypie.resources import ModelResource
@@ -48,9 +49,21 @@ class TeamResource(ModelResource):
 class PomodoroResource(ModelResource):
 
     class Meta:
-        queryset = Pomodoro.objects.filter(date_end__gte=datetime.now())
+        queryset = Pomodoro.objects.filter(date_end__gt=datetime.now())
+        authentication = BasicAuthentication()
         resource_name = 'pomodoros'
-        fields = ('user', 'team', 'date_start', 'date_end', 'record_type')
+        fields = ('id', 'user', 'team', 'date_start', 'date_end', 'record_type')
+        always_return_data = True
 
+    def get_list(self, request, **kwargs):
+        """
+        overides get_list method as get_detail
 
-
+        """
+        object_list = self.get_object_list(request).filter(is_broken=False, user=request.user)
+        if not object_list.exists():
+            error_message = 'pomodoro not found'
+            return self.error_response(request, error_message)
+        obj = object_list[0]
+        bundle = self.full_dehydrate(self.build_bundle(obj=obj, request=request))
+        return self.create_response(request, bundle)
