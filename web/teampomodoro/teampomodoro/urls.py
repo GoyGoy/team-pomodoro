@@ -8,5 +8,6 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^accounts/', include('profiles.urls')),
+    url(r'^api/', include('api.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
