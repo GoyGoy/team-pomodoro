@@ -8,9 +8,14 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}css/screen.css">
 </head>
 <body>
-<header></header>
-{% block content %}
-
-{% endblock content %}
+<header>
+    {% if user.is_authenticated %}
+        <h3>hello {{ user.username }}</h3>
+        <h2><a href="{% url "auth_logout" %}">logout</a></h2>
+    {% endif %}
+</header>
+<section class="content">
+    {% block content %}{% endblock content %}
+</section>
 </body>
 </html>
