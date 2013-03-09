@@ -13,6 +13,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+GRAPPELLI_ADMIN_TITLE = "Team Pomodoro"
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -107,6 +108,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'grappelli',
+
     'django.contrib.admin',
 
     'teams',
