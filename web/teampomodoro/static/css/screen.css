@@ -1,0 +1,113 @@
+body {
+    font-family: "proxima-nova", sans-serif;
+    width: 400px;
+    margin: 30px auto 100px;
+}
+
+header {
+    background: url(../images/logo.png) no-repeat left center;
+    height: 200px;
+}
+
+a {
+    color: #c1272d;
+}
+
+header h3 {
+    float: left;
+    width: 46%;
+    margin-left: 5px;
+}
+
+header h2 {
+    margin: 0;
+    width: 30%;
+    float: left;
+    font-weight: normal;
+    text-align: right;
+}
+
+header h2 a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+form {
+    padding: 20px 0;
+    color: #353535;
+    margin: 20px 0;
+    border: 3px solid #353535;
+    border-radius: 10px;
+}
+
+form label {
+    display: block;
+    padding: 10px 0;
+    font-size: 20px;
+    color: #c1272d;
+}
+
+form p {
+    padding: 0 30px;
+    margin: 0;
+}
+
+form input[type='text'], form input[type='password'] {
+    background: white;
+    padding: 5px;
+    font-size: 25px;
+}
+
+form select {
+    width: 80%;
+}
+
+form footer input {
+    background: #c1272d;
+    color: white;
+    padding: 5px 10px;
+    border: 2px solid black;
+    margin: 20px 30px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.timer {
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "proxima-nova-soft", sans-serif;
+}
+
+.timer em {
+    display: block;
+    font-style: normal;
+    font-size: 30px;
+    background: #006837;
+    color: white;
+    padding: 10px;
+    margin: 0 20px 10px;
+    border-radius: 5px;
+
+}
+
+.timer em + i {
+    background: #c1272d;
+    display: block;
+    font-style: normal;
+    font-size: 30px;
+    color: white;
+    padding: 10px;
+    margin: 0 20px 10px;
+    border-radius: 5px;
+    width: 100px;
+}
+
+h3 {
+    margin: 0;
+    padding: 5px 30px;
+}
+
+form footer .register {
+    margin-left: -20px;
+}
