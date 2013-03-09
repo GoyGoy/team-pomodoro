@@ -14,6 +14,7 @@ form {
     color: #353535;
     margin: 20px 0;
     border: 3px solid #353535;
+    border-radius: 10px;
 }
 
 form label {
@@ -45,6 +46,7 @@ form footer input {
     border: 2px solid black;
     margin: 20px 30px 20px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .timer {
