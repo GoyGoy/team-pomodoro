@@ -9,7 +9,8 @@ class Team(models.Model):
     Holds teams
     """
     name = models.CharField(max_length=255)
-    owner = models.ForeignKey(User, related_name=_("Owner"))
+    owner = models.ForeignKey(User, verbose_name=_("Owner"),
+                              related_name="owned_teams")
     members = models.ManyToManyField(User, related_name="teams")
     pomodoro_time = models.PositiveIntegerField(_("Pomodoro Time"))
     long_break_time = models.PositiveIntegerField(_("Long Break Time"))

@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Teampomodoro</title>
-    <script type="text/javascript" src="//use.typekit.net/mvu2iah.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script  src="//use.typekit.net/mvu2iah.js"></script>
+    <script >try{Typekit.load();}catch(e){}</script>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/h5bp.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/screen.css">
 </head>
@@ -17,5 +17,8 @@
 <section class="content">
     {% block content %}{% endblock content %}
 </section>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+{% block scripts %}
+{% endblock %}
 </body>
 </html>

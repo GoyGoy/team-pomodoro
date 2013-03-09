@@ -111,3 +111,7 @@ h3 {
 form footer .register {
     margin-left: -20px;
 }
+
+form#create_team_form {
+    display: none;
+}

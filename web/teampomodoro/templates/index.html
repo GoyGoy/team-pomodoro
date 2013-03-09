@@ -1,1 +1,38 @@
 {% extends "base.html" %}
+
+
+{% block content %}
+    <form action="">
+    {{ choose_team.as_p }}
+        <footer><input type="submit" value="Choose"></footer>
+    </form>
+
+    <form action="">
+        <p><label>Choose a team to manage</label></p>
+        {% for team in user.owned_teams.all %}
+            <a href="">{{ team }}</a><br />
+        {% endfor %}
+
+        <footer>
+            <input type="button" id="create-team-button" value="Create a new team">
+        </footer>
+    </form>
+
+
+    <form action="" method="post" id="create_team_form">
+        {% csrf_token %}
+        {{ create_team.as_p }}
+        <footer><input type="submit" value="Create"></footer>
+    </form>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(function () {
+            $("#create-team-button").click(function () {
+                $("#create_team_form").toggle();
+            });
+        });
+    </script>
+{% endblock %}
